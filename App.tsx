@@ -6,15 +6,13 @@
  */
 
 import React from 'react';
-import {
-  Text,
-  View,
-  SafeAreaView
-} from 'react-native';
 import { TailwindProvider } from 'tailwindcss-react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './src/screens/HomeScreen';
+import Discover from './src/screens/Discover';
+import ItemElement from './src/screens/ItemElement';
+
 
 
 function App(): JSX.Element {
@@ -27,10 +25,17 @@ const Stack = createStackNavigator()
           name='HomeScreen'
           component={HomeScreen}
           />
+          <Stack.Screen 
+          name='Discover'
+          component={Discover}
+          />
+          <Stack.Screen 
+          name='ItemElement'
+          component={ItemElement}
+          />
+
+          
         </Stack.Navigator>
-        {/* <SafeAreaView className="flex-1 items-center justify-center">
-          <Text className="text-red-600">COUCdOxsU</Text>
-        </SafeAreaView> */}
       </TailwindProvider>
     </NavigationContainer>
   );
